@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f5fc;
+}
+
+body{
+    background-color:#f3f5fc;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+.main-logo{
+    padding: 0 40px 0 40px;
+}
+.main-conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.main-conteiner-texto{
+    display: flex;
+    padding-top: 128px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+}
+.main-conteiner-texto-input{
+    border: 0;
+    outline: 0;
+    resize: none;
+}
+.main-conteiner-texto-input::placeholder,:focus{
+    color: #0A3871;
+}
+.main-button{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 32px;
+}
+.aviso{
+    display: flex;
+    gap: 8px;
+    margin: 0px;
+    font-size: 12px;
+    line-height: 18px;
+    opacity: 80%;
+    color: #45565F;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+.aviso-img{
+    fill: red;
+}
+.main-button-conteiner{
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    width: 680px;
+    height: 67px;
+}
+.main-button-conteiner-cript{
+    border-radius: 24px;
+    width: 328px;
+    border: none;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    background-color: #0A3871;
+    border-color: #0A3871;
+}
+.main-button-conteiner-decript{
+    border-radius: 24px;
+    width: 328px;
+    color: #0A3871;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    border: 1px solid #0A3871;
+    background-color: #D8DFE8;
+    border-color: #0A3871;
+}
+.subconteiner-output{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 848px;
+    border-radius: 32px;
+    background-color: white;
+    box-shadow: 0px 24px 32px -9px #00000014;
+}
+.subconteiner-output-img{
+    background-color: white;
+}
+.subconteiner-text{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 32px;
+    padding: 0 16px;
+    text-align: center;
+    background-color: white;
+}
+.subconteiner-text-tittle{
+    font-size: 24px;
+    line-height: 28.8px;
+    background-color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: #343A40;
+}
+.subconteiner-text-subtittle{
+    line-height: 24px;
+    font-size: 16px;
+    padding: 0 16px;
+    background-color: white;
+    color: #495057;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
