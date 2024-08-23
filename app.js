@@ -23,20 +23,45 @@ function reiniciar(){
     document.getElementById("output-text").style.display ="none";
 }
 
-function criptografar(){
-    if (texto.value != '') {
-        texto_criptografado = texto.value.split("").map(letra => criptografia[letra] || letra).join('');
-        output(texto_criptografado);
-        limpar_tela()
+function verificar_erros(){
+    let verificar_texto = texto.value.match(/[a-z_ ]/g);
+    if (texto.value==''||/^[ ]+$/.test(texto.value)){
+        alert('O campo de texto não pode estar vazio!');
+        return false;
+    }else{
+        if (verificar_texto==null) {
+            alert('Apenas letras minúsculas e sem acento!');
+            return false;
+        }else{
+            if (texto.value != verificar_texto.join('')) {
+                alert('Apenas letras minúsculas e sem acento!');
+                return false;
+            }else{
+                return true;
+            }
+        }
+        return true;
     }
 }
 
+function criptografar(){
+    if(verificar_erros()){
+        texto_criptografado = texto.value.split("").map(letra => criptografia[letra] || letra).join('');
+        output(texto_criptografado);
+        limpar_tela()
+    };
+}
+
 function descriptografar(){
-    if (texto.value != '') {
+    if (verificar_erros()) {
         texto_descriptografado = texto.value;
         descriptografia.forEach(substituir => {texto_descriptografado = texto_descriptografado.replaceAll(substituir.chave, substituir.vogal)});
-        output(texto_descriptografado);
-        limpar_tela();
+        if (texto_descriptografado == texto.value) {
+            alert('O texto enviado não está criptografado.')
+        }else{
+            output(texto_descriptografado);
+            limpar_tela();
+        }
     }
 }
 
