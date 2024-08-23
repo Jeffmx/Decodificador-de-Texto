@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'neo tech';
+    src: url(./fonts/Neo\ Tech.ttf);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -14,7 +19,23 @@ body{
     margin: 40px;
 }
 .main-logo{
-    padding: 0 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px 250px 40px;
+}
+.creditos{
+    align-items: center;
+    font-family: "neo tech", sans-serif;
+    color: gray;
+    background-color: white;
+    box-shadow: 0px 24px 32px 18px #00000014;
+    padding: 18%;
+    border-radius: 27px;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    letter-spacing: -3px;    
 }
 .main-conteiner{
     display: flex;
@@ -34,7 +55,7 @@ body{
     outline: 0;
     resize: none;
 }
-.main-conteiner-texto-input::placeholder,:focus{
+.main-conteiner-texto-input::placeholder,:focus,:not(:focus){
     color: #0A3871;
 }
 .main-button{
@@ -53,9 +74,6 @@ body{
     color: #45565F;
     font-family: "Inter", sans-serif;
     font-weight: 400;
-}
-.aviso-img{
-    fill: red;
 }
 .main-button-conteiner{
     display: flex;
@@ -86,14 +104,80 @@ body{
 }
 .subconteiner-output{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 400px;
     height: 848px;
     border-radius: 32px;
     background-color: white;
     box-shadow: 0px 24px 32px -9px #00000014;
+}
+.subconteiner-output-null{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+    background-color: white;
+}
+.subconteiner-output-full{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 32px;
+    background-color: white;
+}
+.subconteiner-output-full-text{
+    display: flex;
+    border: 0;
+    outline: 0;
+    resize: none;
+    margin: 32px;
+    background-color: white;
+    color: #495057;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+}
+.copy{
+    position: relative;
+    border-radius: 24px;
+    margin-bottom: 32px;
+    width: 328px;
+    height: 67px;
+    color: #0A3871;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    border: 1px solid #0A3871;
+    background-color: white;
+    border-color: #0A3871;
+}
+.copy .tooltip{
+    visibility: hidden;
+    width: 180px;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.copy .tooltip::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-style: solid;
+    border-color: gray transparent transparent transparent;
+}
+.copy.show-tooltip .tooltip{
+    visibility: visible;
+    opacity: 1;
 }
 .subconteiner-output-img{
     background-color: white;
